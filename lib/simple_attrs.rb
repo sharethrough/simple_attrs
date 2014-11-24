@@ -3,6 +3,7 @@ require "simple_attrs/version"
 module SimpleAttrs
   def self.included(base)
     base.extend ClassMethods
+
     base.class_eval do
       @simple_attrs ||= {}
 

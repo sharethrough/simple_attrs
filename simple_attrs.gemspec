@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jgdreyes@gmail.com"]
   spec.summary       = %q{Simple attrs DSL}
   spec.description   = %q{DSL for adding attributes to any plain old ruby object.}
-  spec.homepage      = "codeshoppe.github.io/simple_attrs"
+  spec.homepage      = "http://codeshoppe.github.io/simple_attrs"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,5 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.1.0"
+  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_development_dependency "byebug", "~> 3.5"
 end
