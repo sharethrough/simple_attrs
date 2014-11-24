@@ -1,18 +1,18 @@
 # SimpleAttrs
 
 The goal is to provide a simple DSL to define attributes for your
-models.  SimpleAttrs does not support type checking, coercion or default
-values.  For a more complex solution, look at these other great
-libraries:
-- [Attrs](https://github.com/wojtekmach/attrs)
-- [Attrio](https://github.com/jetrockets/attrio)
-- [Virtus](https://github.com/solnic/virtus)
+models.
 
 ## Features
 - Adds a reader/write for each attribute using `attr_accessor`.
 - Adds an initializer that takes in an options hash to define intial
   values.  The default initializer will ensure that the option hash only
 includes values defined as a simple_attr.
+
+SimpleAttrs does not support type checking, coercion or default
+values.  For a more complex solution, look at these other great
+libraries: [Attrs](https://github.com/wojtekmach/attrs),
+[Attrio](https://github.com/jetrockets/attrio), [Virtus](https://github.com/solnic/virtus)
 
 ## Installation
 
