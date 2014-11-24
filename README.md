@@ -51,6 +51,20 @@ ex = SimpleExample.new(invalid_attr: 1)
 ArgumentError: Cannot set invalid_attr through initializer
 ```
 
+## Performance
+If you want a bare-bones attribute DSL, `simple_attrs` is the performant solution you've been looking for.  Check out the benchmarking code here: [simple_attrs_benchmark](https://github.com/codeshoppe/simple_attrs_benchmark).
+
+Ran on MBP, Processor: 2.4GHz i5, Memory: 8GB
+
+| Gem | 1 attr / 1 obj | 25 attrs / 1 obj | 1 attr / 100,000 objs | 25 attrs / 100,000 objs |
+| ------------ | ------------ | ----------- | ------------ | ------------ |
+| Attrio       |  `0.001390`  |  `0.000293` |  `1.234200`  |  `22.420148` |
+| Attrs        |  `0.000013`  |  `0.000104` |  `0.177039`  |  `_4.367675` |
+| Simple Attrs |  `0.000012`  |  `0.000010` |  `0.185468`  |  `_0.176154` |
+| Virtus       |  `0.000256`  |  `0.000396` |  `0.763091`  |  `11.319977` |
+
+`simple_attrs` can provide a huge performance gain if you plan on instantiating many objects.  
+
 ## Contributing
 
 1. Fork it ( https://github.com/codeshoppe/simple_attrs/fork )
