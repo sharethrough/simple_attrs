@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Simple attrs by codeshoppe</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Simple attrs</h1>
+          <h2>DSL for adding attributes to any plain old ruby object.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/codeshoppe/simple_attrs/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/codeshoppe/simple_attrs/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/codeshoppe/simple_attrs" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="simpleattrs" class="anchor" href="#simpleattrs" aria-hidden="true"><span class="octicon octicon-link"></span></a>SimpleAttrs</h1>
+
+<p>The goal is to provide a simple DSL to define attributes for your
+models.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Adds a reader/write for each attribute using <code>attr_accessor</code>.</li>
+<li>Adds an initializer that takes in an options hash to define intial
+values.  The default initializer will ensure that the option hash only
+includes values defined as a simple_attr.</li>
+</ul>
+
+<p>SimpleAttrs does not support type checking, coercion or default
+values.  For a more complex solution, look at these other great
+libraries: <a href="https://github.com/wojtekmach/attrs">Attrs</a>,
+<a href="https://github.com/jetrockets/attrio">Attrio</a>, <a href="https://github.com/solnic/virtus">Virtus</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s1"><span class="pl-pds">'</span>simple_attrs<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install simple_attrs
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>simple_attrs<span class="pl-pds">'</span></span>
+
+<span class="pl-k">class</span> <span class="pl-en">SimpleExample</span>
+  <span class="pl-k">include</span> <span class="pl-vo">SimpleAttrs</span>
+
+  has_simple_attr <span class="pl-c1">:attr1</span>
+  has_simple_attr <span class="pl-c1">:attr2</span>
+  has_simple_attr <span class="pl-c1">:attr3</span>
+<span class="pl-k">end</span>
+
+ex <span class="pl-k">=</span> <span class="pl-s3">SimpleExample</span>.<span class="pl-k">new</span>(<span class="pl-c1">attr1:</span> <span class="pl-c1">1</span>, <span class="pl-c1">attr2:</span> <span class="pl-c1">2</span>)
+ex.attributes
+=&gt; { <span class="pl-c1">attr1:</span> <span class="pl-c1">1</span>, <span class="pl-c1">attr2:</span> <span class="pl-c1">2</span>, <span class="pl-c1">attr3:</span> <span class="pl-c1">nil</span> }
+
+ex <span class="pl-k">=</span> <span class="pl-s3">SimpleExample</span>.<span class="pl-k">new</span>(<span class="pl-c1">invalid_attr:</span> <span class="pl-c1">1</span>)
+<span class="pl-c1">ArgumentError:</span> <span class="pl-vo">Cannot</span> set invalid_attr through initializer</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it ( <a href="https://github.com/codeshoppe/simple_attrs/fork">https://github.com/codeshoppe/simple_attrs/fork</a> )</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+        </section>
+
+        <footer>
+          Simple attrs is maintained by <a href="https://github.com/codeshoppe">codeshoppe</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
