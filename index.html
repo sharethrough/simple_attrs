@@ -90,6 +90,57 @@ ex <span class="pl-k">=</span> <span class="pl-s3">SimpleExample</span>.<span cl
 <span class="pl-c1">ArgumentError:</span> <span class="pl-vo">Cannot</span> set invalid_attr through initializer</pre></div>
 
 <h2>
+<a id="performance" class="anchor" href="#performance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance</h2>
+
+<p>If you want a bare-bones attribute DSL, <code>simple_attrs</code> is the performant solution you've been looking for.  Check out the benchmarking code here: <a href="https://github.com/codeshoppe/simple_attrs_benchmark">simple_attrs_benchmark</a>.</p>
+
+<p>Ran on MBP, Processor: 2.4GHz i5, Memory: 8GB</p>
+
+<table>
+<thead>
+<tr>
+<th>Gem</th>
+<th>1 attr / 1 obj</th>
+<th>25 attrs / 1 obj</th>
+<th>1 attr / 100,000 objs</th>
+<th>25 attrs / 100,000 objs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attrio</td>
+<td><code>0.001390</code></td>
+<td><code>0.000293</code></td>
+<td><code>1.234200</code></td>
+<td><code>22.420148</code></td>
+</tr>
+<tr>
+<td>Attrs</td>
+<td><code>0.000013</code></td>
+<td><code>0.000104</code></td>
+<td><code>0.177039</code></td>
+<td><code>_4.367675</code></td>
+</tr>
+<tr>
+<td>Simple Attrs</td>
+<td><code>0.000012</code></td>
+<td><code>0.000010</code></td>
+<td><code>0.185468</code></td>
+<td><code>_0.176154</code></td>
+</tr>
+<tr>
+<td>Virtus</td>
+<td><code>0.000256</code></td>
+<td><code>0.000396</code></td>
+<td><code>0.763091</code></td>
+<td><code>11.319977</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><code>simple_attrs</code> can provide a huge performance gain if you plan on instantiating many objects.  </p>
+
+<h2>
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <ol>
