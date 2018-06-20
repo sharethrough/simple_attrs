@@ -9,11 +9,7 @@ module SimpleAttrs
 
       def initialize(options = {})
         options.each do |key, value|
-          if self.class.simple_attrs.has_key?(key.to_sym)
-            instance_variable_set("@#{key}", value)
-          else
-            raise ArgumentError, "Cannot set #{key} through initializer"
-          end
+          instance_variable_set("@#{key}", value)
         end
       end
 

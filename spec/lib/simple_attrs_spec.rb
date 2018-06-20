@@ -41,13 +41,6 @@ describe SimpleAttrs do
       expect(instance.valid_attr).to eq(3)
     end
 
-    it 'raises error when trying to initialize non simple attr' do
-      klass.has_simple_attr(:valid_attr)
-      expect {
-        klass.new(valid_attr: 3, invalid_attr: 4)
-      }.to raise_error(ArgumentError, "Cannot set invalid_attr through initializer")
-    end
-
     it 'allows for initialize to be overwritten' do
       expect {
         klass_with_custom_initialize.new(3)

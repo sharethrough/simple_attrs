@@ -6,8 +6,8 @@ require 'simple_attrs/version'
 Gem::Specification.new do |spec|
   spec.name          = "simple_attrs"
   spec.version       = SimpleAttrs::VERSION
-  spec.authors       = ["Jennifer Reyes"]
-  spec.email         = ["jgdreyes@gmail.com"]
+  spec.authors       = ["Jennifer Reyes", "Anthony Lewis"]
+  spec.email         = ["jgdreyes@gmail.com", "alewis@sharethrough.com"]
   spec.summary       = %q{Simple attrs DSL}
   spec.description   = %q{DSL for adding attributes to any plain old ruby object.}
   spec.homepage      = "http://codeshoppe.github.io/simple_attrs"
